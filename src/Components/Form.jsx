@@ -5,15 +5,17 @@ import Wrapper from "./Wrapper";
 import InputFields from "./InputFields";
 import Label from "./Label";
 import ErrorMessage from './ErrorsMessages'
-import {  useRouter } from "next/router";
+// import  useRouter  from "next/navigation";
+import { useRouter } from "next/navigation";
+
 const Form = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const router = useRouter()
 
     // const handleSubmitregistration=(data) =>console.log(data);
     const onSubmit= (data)=>{
-        router.push('/submit')
 console.log(data);
+router.push('/submit')
 
     }
   return (
@@ -83,7 +85,7 @@ console.log(data);
         <button
           type="submit"
           
-          className="w-full border-2 bg-[#0E7D69] p-2 rounded-md mt-4"
+          className="w-full border-2 bg-[#0E7D69] p-2 rounded-md mt-4 cursor-pointer"
         >
           Submit
         </button>
